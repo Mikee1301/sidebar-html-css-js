@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #ffff;
+}
+
+.sidebar-container {
+  text-overflow: clip;
+  position: fixed;
+  top: 60px;
+  height: 90vh;
+  width: 200px;
+  background: #202020;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  /* Scroll Bar custom  */
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+.sidebar-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-container::-webkit-scrollbar-thumb {
+  background-color: #777777;
+  border-radius: 10px;
+}
+
+.sidebar-container .heading {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: #181818;
+}
+
+.sidebar-container .heading .side-bar-heading {
+  width: 200px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 15px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar-container .heading .side-bar-heading .humberger-menu {
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  width: 40px;
+  font-size: 26px;
+}
+
+.sidebar-container .heading .side-bar-heading .humberger-menu .bx-menu:hover {
+  cursor: pointer;
+}
+
+.sidebar-container .heading .side-bar-heading .logo {
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+}
+
+.sidebar-container .heading .side-bar-heading .logo .bx {
+  font-size: 28px;
+}
+
+.sidebar-container .heading .side-bar-heading.closed {
+  width: 60px;
+}
+
+.sidebar-container .heading .side-bar-heading.open {
+  width: 200px;
+}
+
+.sidebar-container .main-nav {
+  position: fixed;
+  top: 50px;
+  width: 200px;
+  margin: 10px 0 10px 0;
+  height: 100vh;
+}
+
+.sidebar-container .main-nav .nav_main_links {
+  position: fixed;
+  margin-top: 20px;
+  width: 200px;
+  height: 65%;
+  padding-left: 10px;
+  font-size: 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sidebar-container .main-nav .nav_main_links .nav_link {
+  width: 170px;
+  margin-bottom: 10px;
+  height: 40px;
+  border-radius: 10px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar-container .main-nav .nav_main_links .nav_link .tooltip {
+  background: #555;
+  border-radius: 5px;
+  padding: 5px 10px;
+  position: absolute;
+  left: 60px;
+  font-size: 14px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.sidebar-container .main-nav .nav_main_links .nav_link .tooltip::before {
+  content: '';
+  position: absolute;
+  top: 13px;
+  left: -5px;
+  -webkit-transform: rotate(130deg);
+          transform: rotate(130deg);
+  width: 10px;
+  height: 10px;
+  background-color: #555;
+}
+
+.sidebar-container .main-nav .nav_main_links .nav_link a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #fff;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar-container .main-nav .nav_main_links .nav_link a .nav-text {
+  font-size: 14px;
+  opacity: 1;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.sidebar-container .main-nav .nav_main_links .nav_link a .nav-text.hide {
+  opacity: 0;
+}
+
+.sidebar-container .main-nav .nav_main_links .nav_link a .bx {
+  color: #777777;
+  margin-right: 20px;
+  font-size: 22px;
+}
+
+.sidebar-container .main-nav .nav_main_links .nav_link:hover {
+  cursor: pointer;
+  background-color: #555555;
+}
+
+.sidebar-container .main-nav .nav_main_links .nav_link.adjust:hover.nav_link {
+  width: 45px;
+}
+
+.sidebar-container .main-nav .nav_main_links .nav_link.adjust:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar-container.closed {
+  width: 60px;
+}
+
+.content-contaier {
+  height: 100vh;
+  background: #282828;
+}
+/*# sourceMappingURL=main.css.map */
